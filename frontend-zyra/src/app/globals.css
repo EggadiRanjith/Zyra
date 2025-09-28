@@ -1,0 +1,481 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== $100K LUXURY E-COMMERCE GLOBAL STYLES ===== */
+
+@layer base {
+  /* ===== LUXURY CSS VARIABLES ===== */
+  :root {
+    /* Core Luxury Foundation */
+    --obsidian-black: #0d0d0d;
+    --pearl-white: #fefefe;
+    --royal-gold: #d4af37;
+    --platinum-silver: #e5e4e2;
+    
+    /* Sophisticated Neutrals */
+    --charcoal-grey: #36454f;
+    --warm-cream: #f8f6f0;
+    --champagne: #f7e7ce;
+    --graphite: #41424c;
+    
+    /* Emotional Luxury Accents */
+    --deep-emerald: #355e3b;
+    --midnight-sapphire: #082567;
+    --burgundy-wine: #722f37;
+    --rose-gold: #e8b4a0;
+    
+    /* Seasonal Luxury */
+    --spring-sage: #9caf88;
+    --summer-coral: #ff7f7f;
+    --autumn-cognac: #a0522d;
+    --winter-frost: #f0f8ff;
+    
+    /* Luxury Timing */
+    --timing-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-luxury: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* ===== LUXURY BASE STYLES ===== */
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  body {
+    font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--obsidian-black);
+    background-color: var(--pearl-white);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    overflow-x: hidden;
+  }
+
+  /* ===== LUXURY SELECTION ===== */
+  ::selection {
+    background-color: var(--royal-gold);
+    color: var(--pearl-white);
+  }
+
+  /* ===== LUXURY SCROLLBAR ===== */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--warm-cream);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--charcoal-grey);
+    border-radius: 4px;
+    transition: background var(--timing-fast);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--royal-gold);
+  }
+
+  /* ===== LUXURY FOCUS STYLES ===== */
+  :focus-visible {
+    outline: 2px solid var(--royal-gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ===== LUXURY TYPOGRAPHY ===== */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .font-display {
+    font-family: 'Didot', 'Times New Roman', serif;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .font-heading {
+    font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .font-body {
+    font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .font-accent {
+    font-family: 'Optima', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+}
+
+@layer components {
+  /* ===== LUXURY CONTAINER ===== */
+  .luxury-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .luxury-container-sm {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .luxury-container-lg {
+    @apply max-w-8xl mx-auto;
+  }
+
+  /* ===== LUXURY TYPOGRAPHY ===== */
+  .luxury-hero {
+    @apply font-display font-light tracking-tight;
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1.1;
+    color: var(--obsidian-black);
+  }
+
+  .luxury-heading {
+    @apply font-heading font-light tracking-tight;
+    line-height: 1.2;
+    color: var(--obsidian-black);
+  }
+
+  .luxury-body {
+    @apply font-body leading-relaxed;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--charcoal-grey);
+  }
+
+  .luxury-caption {
+    @apply font-accent uppercase tracking-wider font-medium;
+    font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+    color: var(--graphite);
+  }
+
+  /* ===== LUXURY BUTTONS ===== */
+  .luxury-btn {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    min-height: 48px; /* Touch-friendly */
+    min-width: 48px;
+  }
+
+  .luxury-btn-primary {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, var(--obsidian-black), var(--charcoal-grey));
+    color: var(--pearl-white);
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .luxury-btn-primary:hover {
+    background: var(--charcoal-grey);
+  }
+
+  .luxury-btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+  }
+
+  .luxury-btn-secondary {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    border: 2px solid var(--obsidian-black);
+    color: var(--obsidian-black);
+    background: transparent;
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .luxury-btn-secondary:hover {
+    background: var(--obsidian-black);
+    color: var(--pearl-white);
+  }
+
+  .luxury-btn-gold {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, var(--royal-gold), var(--autumn-cognac));
+    color: var(--obsidian-black);
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .luxury-btn-emerald {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    background: linear-gradient(135deg, var(--deep-emerald), var(--spring-sage));
+    color: var(--pearl-white);
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* ===== LUXURY CARDS ===== */
+  .luxury-card {
+    @apply rounded-xl transition-all duration-300;
+    background: var(--pearl-white);
+    border: 1px solid var(--warm-cream);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  .luxury-card:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .luxury-card-glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* ===== LUXURY INPUTS ===== */
+  .luxury-input {
+    @apply w-full px-4 py-3 text-base rounded-lg focus:outline-none transition-all duration-200;
+    background: var(--warm-cream);
+    border: 1px solid var(--champagne);
+    color: var(--obsidian-black);
+  }
+
+  .luxury-input:focus {
+    background: var(--pearl-white);
+    border-color: var(--royal-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  }
+
+  /* ===== LUXURY LINKS ===== */
+  .luxury-link {
+    @apply font-medium transition-colors duration-200;
+    color: var(--obsidian-black);
+    position: relative;
+  }
+
+  .luxury-link:hover {
+    color: var(--royal-gold);
+  }
+
+  .luxury-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--royal-gold);
+    transition: width var(--timing-medium);
+  }
+
+  .luxury-link:hover::after {
+    width: 100%;
+  }
+
+  /* ===== LUXURY BADGES ===== */
+  .luxury-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .luxury-badge-primary {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    background: var(--obsidian-black);
+    color: var(--pearl-white);
+  }
+
+  .luxury-badge-gold {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    background: var(--royal-gold);
+    color: var(--obsidian-black);
+  }
+
+  .luxury-badge-emerald {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    background: var(--deep-emerald);
+    color: var(--pearl-white);
+  }
+
+  /* ===== LUXURY DIVIDERS ===== */
+  .luxury-divider {
+    @apply border-t;
+    border-color: var(--champagne);
+  }
+
+  .luxury-divider-gold {
+    @apply border-t-2;
+    border-color: var(--royal-gold);
+  }
+
+  .luxury-divider-emerald {
+    @apply border-t-2;
+    border-color: var(--deep-emerald);
+  }
+
+  /* ===== LUXURY HOVER EFFECTS ===== */
+  .luxury-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .luxury-hover:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .luxury-hover-luxury {
+    @apply transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .luxury-hover-luxury:hover {
+    @apply transform -translate-y-2 scale-105;
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ===== LUXURY GRADIENTS ===== */
+  .luxury-gradient {
+    background: linear-gradient(135deg, var(--obsidian-black) 0%, var(--charcoal-grey) 100%);
+  }
+
+  .luxury-gradient-gold {
+    background: linear-gradient(135deg, var(--royal-gold) 0%, var(--autumn-cognac) 100%);
+  }
+
+  .luxury-gradient-emerald {
+    background: linear-gradient(135deg, var(--deep-emerald) 0%, var(--spring-sage) 100%);
+  }
+
+  .luxury-gradient-pearl {
+    background: linear-gradient(135deg, var(--pearl-white) 0%, var(--warm-cream) 100%);
+  }
+}
+
+@layer utilities {
+  /* ===== LUXURY UTILITIES ===== */
+  
+  /* Luxury Text Colors */
+  .text-obsidian-black { color: var(--obsidian-black); }
+  .text-pearl-white { color: var(--pearl-white); }
+  .text-royal-gold { color: var(--royal-gold); }
+  .text-deep-emerald { color: var(--deep-emerald); }
+  .text-charcoal-grey { color: var(--charcoal-grey); }
+  .text-graphite { color: var(--graphite); }
+
+  /* Luxury Background Colors */
+  .bg-obsidian-black { background-color: var(--obsidian-black); }
+  .bg-pearl-white { background-color: var(--pearl-white); }
+  .bg-royal-gold { background-color: var(--royal-gold); }
+  .bg-deep-emerald { background-color: var(--deep-emerald); }
+  .bg-warm-cream { background-color: var(--warm-cream); }
+  .bg-champagne { background-color: var(--champagne); }
+
+  /* Luxury Animations */
+
+  /* Luxury Responsive Typography */
+  .luxury-responsive-hero {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  .luxury-responsive-h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .luxury-responsive-h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.3;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .luxury-responsive-body {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  /* Mobile-First Utilities */
+  .luxury-mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .luxury-mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Touch-Friendly Utilities */
+  .luxury-touch {
+    min-height: 48px;
+    min-width: 48px;
+    touch-action: manipulation;
+  }
+
+  /* Luxury Print Styles */
+  .luxury-print-hidden {
+    @media print {
+      display: none !important;
+    }
+  }
+
+  /* 3D Perspective Effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+
+/* ===== LUXURY RESPONSIVE DESIGN ===== */
+@media (max-width: 640px) {
+  .luxury-mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .luxury-mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
+
+/* ===== LUXURY PRINT STYLES ===== */
+@media print {
+  .luxury-print-hidden {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+}
+
+/* ===== ADDITIONAL ANIMATIONS ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+
